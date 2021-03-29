@@ -4,13 +4,9 @@ services:
   nginx:
     image: keviiin38/4dvop-app:nginx
     build: nginx/
-    ports:
-      - "8080:8080"
 
   haproxy:
     image: keviiin38/4dvop-app:haproxy
     build: haproxy/
     ports:
       - "80:80"
-    depends_on:
-      - nginx

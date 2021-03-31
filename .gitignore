@@ -1,0 +1,40 @@
+*
+!*/
+
+# Docker files
+!/docker/haproxy/haproxy.cfg
+!/docker/haproxy/Dockerfile
+!/docker/nginx/nginx.conf
+!/docker/nginx/Dockerfile
+!/docker/docker-compose.yml
+
+# Ansible files
+!/ansible/roles/haproxy/files/haproxy.cfg
+!/ansible/roles/haproxy/handlers/main.yml
+!/ansible/roles/haproxy/tasks/main.yml
+!/ansible/roles/nginx/files/nginx.conf
+!/ansible/roles/nginx/handlers/main.yml
+!/ansible/roles/nginx/tasks/main.yml
+!/ansible/playbook.yml
+!/ansible/Vagrantfile
+
+# Chef files
+!/chef/cookbooks/haproxy/files/haproxy.cfg
+!/chef/cookbooks/haproxy/recipes/default.rb
+!/chef/cookbooks/nginx/files/nginx.conf
+!/chef/cookbooks/nginx/recipes/default.rb
+!/chef/roles/app.rb
+!/chef/Vagrantfile
+
+# Puppet files
+!/puppet/modules/haproxy/files/haproxy.cfg
+!/puppet/modules/haproxy/manifests/init.pp
+!/puppet/modules/nginx/files/nginx.conf
+!/puppet/modules/nginx/manifests/init.pp
+!/puppet/manifests/site.pp
+!/puppet/Vagrantfile
+
+# Git files
+!/.gitignore
+!/.gitmodules
+!/README.md

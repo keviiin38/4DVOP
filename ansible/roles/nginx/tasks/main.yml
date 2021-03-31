@@ -1,0 +1,22 @@
+---
+- name: Install NGINX
+  apt:
+    name: nginx
+    state: present
+    update_cache: "yes"
+
+- name: Copy NGINX configuration
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/sites-available/default
+  notify: restart nginx
+
+- name: Clean default NGINX folder
+  file:
+    path: /var/www/html
+    state: absent
+
+- name: Clone git repo
+  git:
+    repo: https://github.com/diranetafen/static-website-example.git
+    dest: /var/www/html

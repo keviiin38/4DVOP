@@ -1,7 +1,7 @@
-FROM nginx:latest
+FROM nginx:1.19
 
-RUN apt update \
-  && apt install -y git \
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends git=1:2.20.* \
   && rm -rf /usr/share/nginx/html \
   && git clone https://github.com/diranetafen/static-website-example.git /usr/share/nginx/html
 

@@ -1,0 +1,29 @@
+---
+- name: Copy HAProxy configuration
+  copy:
+    src: haproxy.cfg
+    dest: /etc/haproxy.cfg
+
+- name: Create 4dvop-network
+  docker_network:
+    name: 4dvop-network
+
+- name: Deploy 4dvop-app:nginx
+  docker_container:
+    name: nginx
+    image: keviiin38/4dvop-app:nginx
+    state: started
+    networks:
+      - name: 4dvop-network
+
+- name: Deploy 4dvop-app:haproxy
+  docker_container:
+    name: haproxy
+    image: keviiin38/4dvop-app:haproxy
+    state: started
+    ports:
+      - "8000:80"
+    networks:
+      - name: 4dvop-network
+    volumes:
+      - /etc/haproxy.cfg:/etc/haproxy/haproxy.cfg

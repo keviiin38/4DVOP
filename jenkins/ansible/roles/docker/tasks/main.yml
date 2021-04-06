@@ -1,0 +1,39 @@
+---
+- name: Install Docker requirements
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+    state: present
+    update_cache: yes
+
+- name: Add Docker APT key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker APT repository
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu focal stable
+    state: present
+
+- name: Install Docker
+  apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - python3-docker
+    state: present
+    update_cache: yes
+
+- name: Install Ansible Docker requirements
+  apt:
+    name:
+      - python3-docker
+      - python3-distutils
+    state: present
+    update_cache: yes

@@ -1,0 +1,1 @@
+app ansible_ssh_user='user' ansible_ssh_password='password' ansible_ssh_common_args='-o StrictHostKeyChecking=no' ansible_become='yes' ansible_become_pass='password'

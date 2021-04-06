@@ -8,6 +8,17 @@
 !/docker/nginx/Dockerfile
 !/docker/docker-compose.yml
 
+# Jenkins files
+!/jenkins/ansible/roles/app/files/haproxy.cfg
+!/jenkins/ansible/roles/app/tasks/main.yml
+!/jenkins/ansible/roles/docker/tasks/main.yml
+!/jenkins/ansible/hosts
+!/jenkins/ansible/playbook.yml
+!/jenkins/docker/app/Dockerfile
+!/jenkins/docker/app/docker-entrypoint.sh
+!/jenkins/docker/jenkins/Dockerfile
+!/jenkins/docker-compose.yml
+
 # Ansible files
 !/ansible/roles/haproxy/files/haproxy.cfg
 !/ansible/roles/haproxy/handlers/main.yml
